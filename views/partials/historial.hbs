@@ -1,0 +1,59 @@
+<div class="col-4">
+        <div >
+          <h4>Historial</h4>
+          <hr class="bg-light w-25 mx-auto mt-5"  />
+
+          <table class="table table-striped table-hover mt-3">
+            <thead class="text-white">
+              <th>Nombre</th>
+              <th>Comentario</th>
+              <th>Monto</th>
+              <th>-</th>
+            </thead>
+            <tbody class="text-white" id="gastosHistorial"></tbody>
+            {{#each gastos}}
+            <tr>
+              <td >{{roomer}}</td>
+              <td >{{descripcion}}</td>
+              <td >${{monto}}</td>
+              <td>
+                <button type="button" class="btn btn-warning editarGasto" data-id="{{this.id}}" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fas fa-edit"></i></button>
+                <button type="button" class="btn btn-danger borrarGasto" data-id="{{this.id}}"><i class="fas fa-trash"></i></button>
+              </td>
+            </tr>
+            {{/each}}
+          </table>
+        </div>
+      </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="border rounded p-2 m-auto p-4">
+                <h4>Editar Gasto</h4>
+                <hr class="bg-light w-25 mx-auto" />
+      <form id="formModal">
+                <div class="d-flex flex-column align-items-center">
+                  <input type="hidden" id="idGasto">
+                  <h6>Roommate</h6>
+                  <input class="form-control w-50 mb-2" id="roomModal" type="text" disabled/>
+                  <h6>Descripción</h6>
+                  <textarea class="form-control w-50 mb-2" id="descripcionModal">
+                        Articulos de limpieza</textarea>
+      
+                  <h6>Monto:</h6>
+                  <input class="form-control w-50 mb-2" id="montoModal" type="number"  />
+                </div>
+                </form>
+                <div class="d-block my-1">
+                  <button class="btn btn-primary" id="editar">
+                    Editar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>

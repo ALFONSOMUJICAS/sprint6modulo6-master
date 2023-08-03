@@ -1,0 +1,20 @@
+body {
+    text-align: center !important;
+    color: white !important;
+    background-color: #23036a !important;
+}
+
+.contenido{
+    margin: 5% !important;
+}
+.modal-body {
+    color: black !important;
+}
+
+ .btn-primary{
+    background: #6200ee !important;
+}
+
+i {
+    cursor: pointer !important; 
+}
